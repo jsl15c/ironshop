@@ -1,0 +1,17 @@
+<h2>Add a product</h2>
+
+<form method="post" action="/products">
+  <label for="product-name-input">Name:
+    <input id="product-name-input" type="text" name="productName"/>
+  </label><br />
+  <label for="product-price-input">Price:
+    <input id="product-price-input" step="0.01" type="number" name="productPrice"/>
+  </label><br />
+  <label for="product-image-input">Image:
+    <input id="product-image-input" type="url" name="productImage"/>
+  </label><br />
+  <label for="desc-input">Description:
+    <textarea id="desc-input" name="productDesc"></textarea>
+  </label><br />
+  <button>Add product</button>
+</form>
