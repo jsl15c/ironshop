@@ -10,4 +10,17 @@
 </div>
 <p>
   Description: <%= productDetails.description %>
-</p>
+</p><br />
+<section>
+  <h3>Reviews (<%= productDetails.reviews.length %>)</h3>
+  <ul>
+    <% productDetails.reviews.forEach((review) => { %>
+      <li>
+        <h4>Author: <%= review.author %></h4>
+        <p><%= review.content %></p>
+        <p><%= review.stars %></p>
+      </li>
+    <% }); %>
+  </ul>
+</section>
+<a href="/products/<%=productDetails._id%>/reviews/new">Review this product</a>

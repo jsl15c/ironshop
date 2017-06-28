@@ -45,7 +45,6 @@ img {
 }
 
 label {
-  font-size:18px;
   font-weight: bold;
 }
 
@@ -60,6 +59,14 @@ a:hover {
 
 .edit-img {
   max-width:80px
+}
+
+footer {
+  position: absolute;
+  bottom:0;
+  text-align: center;
+  left:0;
+  right:0;
 }
 
 

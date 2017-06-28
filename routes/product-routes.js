@@ -29,9 +29,22 @@ router.post('/products', (req,res,next) => {
       imageUrl:req.body.productImageUrl,
       description:req.body.productDesc
   });
+
+  console.log('SALDKJASLKDJLSAHKFHSDKLAHSDHSAIUDHSKLADHJ');
+  console.log('BEFORE SAVE');
+  console.log(theProduct.errors);
+
+
   theProduct.save((err) => {
-    if (err) {
+    if (err && theProduct.errors === undefined) {
       next(err);
+      return;
+    }
+    else if (err && theProduct.errors) {
+      res.render('product-views/new-product-view.ejs', {
+        // view variables, display form again
+        validationErrors:theProduct.errors
+      });
       return;
     }
     //if successful, STEP #3: REDIRECT to URL 🌎
